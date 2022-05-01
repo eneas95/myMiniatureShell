@@ -16,3 +16,9 @@ Testes realizados:
 /bin/cat test.txt | /bin/grep test (ok)
 
 /bin/cat test2.txt | /bin/grep 123 (ok)
+
+/bin/cat test.txt > out.txt (ok)
+
+./contarChar < test.txt (ok)
+
+./contarChar < test.txt | ./helloworld > out (ok)
