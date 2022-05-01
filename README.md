@@ -22,3 +22,5 @@ Testes realizados:
 ./contarChar < test.txt (ok)
 
 ./contarChar < test.txt | ./helloworld > out (ok)
+
+./contarChar | ./helloworld (ok)
