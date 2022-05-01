@@ -32,6 +32,7 @@ char avLine[MAX_CMD_LINE + 1];
 int cmd_num;
 int backGroundExec = 0; // backGroundExec is false
 int append = 0; //append is false
+
 char * lineptr; //ponteiro que aponta para a string linha de comando
 char * avptr; //ponteiro auxiliar
 int cmd_counter = 0; //command counter
@@ -66,7 +67,6 @@ void handler(int sig) {
 int init() {
     //Diferente de malloc, que apenas aloca um bloco de memória,
     //memset seta os bytes de um bloco de memória para um valor específico, no caso, zero.
-    //cmdLine[MAX_CMD_LINE + 1] = (char*) malloc((MAX_CMD_LINE + 1)*sizeof(char));
 	memset(cmdLine, 0, sizeof(cmdLine));
 	memset(cmds, 0, sizeof(cmds));
 	for (int i = 0; i < CMD_NUM; ++i) {
@@ -242,7 +242,7 @@ void fork2(struct CMD * p, int n) {
 		}
 	   
 	    if (n == 1) {
-			char buf[1024];
+			char *buf = (char*) malloc((1024)*sizeof(char));
 			memset(buf, 0, sizeof(buf));
 			if (read(p->infd, buf, 1024) != 0) {
                 //read() retorna 0 somente se não há processo algum com o pipe aberto para write, a fim de indicar end-of-file
