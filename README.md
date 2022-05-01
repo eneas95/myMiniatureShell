@@ -21,6 +21,6 @@ Testes realizados:
 
 ./contarChar < test.txt (ok)
 
-./contarChar < test.txt | ./helloworld > out (ok)
+./contarChar < test.txt | ./helloworld > out.txt (ok)
 
 ./contarChar | ./helloworld (ok)
