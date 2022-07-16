@@ -226,6 +226,7 @@ int parse_cmd() {
 
 // Função que realiza o fork() e o execvp(2)
 void fork2(struct CMD * p, int n) {
+	//n: número de comandos
 	pid_t pid; //Process ID
 	pid = fork();
 	if (pid == 0) {
